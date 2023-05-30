@@ -1,0 +1,892 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to top left, #333333 50%, #454545);
+    background-attachment: fixed;
+}
+
+#banner {
+    margin: 0;
+    height: 130px;
+    width: 100%;
+    position: relative;
+}
+
+#icon {
+    left: 8px;
+    top: 11px;
+    height: 70px;
+    margin: 10px;
+    position: absolute;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 60px;
+    position: absolute;
+    top: -18px;
+    margin-left: 95px;
+    text-shadow: 4px 4px 8px rgb(47, 47, 47);
+}
+
+@media (max-width: 650px) {
+    #name {
+        display: none;
+    }
+}
+
+.autorization {
+    right: 10px;
+    text-align: right;
+    position: relative;
+    top: -155px;
+    font-size: 25px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.a-login:hover {
+    color: #202020;
+}
+
+#left-panel {
+    position: absolute;
+    margin: -10px;
+    top: 18.7vh;
+    width: 400px;
+    height: 82.5%;
+    background: linear-gradient(to top left, #272727 60%, #353535);
+    background-attachment: fixed;
+}
+
+.text {
+    color: rgb(185, 185, 185);
+    font-size: 35px;
+    font-family: cursive;
+    font-weight: 600;
+    margin: 20px;
+    margin-top: 5px;
+}
+
+.text:hover {
+    color: white;
+}
+
+.text2 {
+    color: rgb(185, 185, 185);
+    font-size: 35px;
+    margin: 10px;
+    margin-top: 50px;
+}
+
+.text2:hover {
+    color: white;
+}
+
+.playlist {
+    color: rgb(185, 185, 185);
+    font-size: 20px;
+    margin-top: 10px;
+    margin: 15px;
+}
+
+.playlist li a {
+    margin: -5px;
+}
+
+.playlist:hover {
+    color: white;
+}
+
+.search {
+    position: absolute;
+    top: 21vh;
+    left: 60vh;
+    right: 0;
+}
+
+.search:after {
+    content:""; 
+    clear:both; 
+    display:table;
+}
+
+.search form {
+    width: auto;
+    float: right;
+    margin-right: 50px;
+}
+
+.search input {
+    width: 285px;
+    height: 50px;
+    padding-left: 15px;
+    padding-right: 65px;
+    border-radius: 20px;
+    border: 2px solid #323232;
+    background: #484848;
+    outline: none;
+    position: absolute;
+    transition: .3s linear;
+}
+
+.search-txt {
+    color: rgb(210, 210, 210);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.search-txt::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+.search button {
+    background: none;
+    border: none;
+    width: 65px;
+    height: 52px;
+    position: absolute;
+    right: 0;
+    left: 41vh;
+    top: 0.3vh;
+}
+
+.search-icon {
+    height: 40px;
+}
+
+.forms {
+    position: absolute;
+    top: 33vh;
+    left: 60vh;
+}
+
+#best-tracks {
+    background: linear-gradient(to top left, #272727 60%, #353535);
+    background-attachment: fixed;
+    border: 2px solid #202020;
+    border-radius: 15px;
+    position: absolute;
+    height: 14.5vh;
+    width: 50vh;
+}
+
+#best-tracks:hover {
+    background: #303030;
+    border: 2px solid #252525;
+}
+
+#best-tracks:hover h1 {
+    color: rgb(150, 150, 150);
+}
+
+#best-tracks-text {
+    color: rgb(185, 185, 185);
+    position: relative;   
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 30px;
+}
+
+#novelties {
+    background: linear-gradient(to top left, #272727 60%, #353535);
+    background-attachment: fixed;
+    border: 2px solid #202020;
+    border-radius: 15px;
+    position: absolute;
+    height: 14.5vh;
+    width: 50vh;
+    left: 53vh;
+}
+
+#novelties:hover {
+    background: #303030;
+    border: 2px solid #252525;
+}
+
+#novelties:hover h1 {
+    color: rgb(150, 150, 150);
+}
+
+#novelties-text {
+    color: rgb(185, 185, 185);
+    position: relative;   
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 30px;
+}
+
+#hits-of-week {
+    background: linear-gradient(to top left, #272727 60%, #353535);
+    background-attachment: fixed;
+    border: 2px solid #202020;
+    border-radius: 15px;
+    position: absolute;
+    height: 14.5vh;
+    width: 50vh;
+    top: 20vh;
+}
+
+#hits-of-week:hover {
+    background: #303030;
+    border: 2px solid #252525;
+}
+
+#hits-of-week:hover h1 {
+    color: rgb(150, 150, 150);
+}
+
+#hits-of-week-text {
+    color: rgb(185, 185, 185);
+    position: relative;   
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 30px;
+    top: -3vh;
+}
+
+
+#mix {
+    background: linear-gradient(to top left, #272727 60%, #353535);
+    background-attachment: fixed;
+    border: 2px solid #202020;
+    border-radius: 15px;
+    position: absolute;
+    height: 14.5vh;
+    width: 50vh;
+    left: 53vh;
+    top: 20vh;
+}
+
+#mix:hover {
+    background: #303030;
+    border: 2px solid #252525;
+}
+
+#mix:hover h1 {
+    color: rgb(150, 150, 150);
+}
+
+#mix-text {
+    color: rgb(185, 185, 185);
+    position: relative;   
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 30px;
+}
+
+#best-performers {
+    background: linear-gradient(to top left, #272727 60%, #353535);
+    background-attachment: fixed;
+    border: 2px solid #202020;
+    border-radius: 15px;
+    position: absolute;
+    height: 14.5vh;
+    width: 50vh;
+    top: 40vh;
+}
+
+#best-performers:hover {
+    background: #303030;
+    border: 2px solid #252525;
+}
+
+#best-performers:hover h1 {
+    color: rgb(150, 150, 150);
+}
+
+#best-performers-text {
+    color: rgb(185, 185, 185);
+    position: relative;   
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 30px;
+    top: -3vh;
+}
+
+#genres {
+    background: linear-gradient(to top left, #272727 60%, #353535);
+    background-attachment: fixed;
+    border: 2px solid #202020;
+    border-radius: 15px;
+    position: absolute;
+    width: 50vh;
+    height: 14.5vh;
+    left: 53vh;
+    top: 40vh;
+}
+
+#genres:hover {
+    background: #303030;
+    border: 2px solid #252525;
+}
+
+#genres:hover h1 {
+    color: rgb(150, 150, 150);
+}
+
+#genres-text {
+    color: rgb(185, 185, 185);
+    position: relative;   
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 30px;
+}
+
+@media (max-width: 1200px) {
+    #novelties {
+        left: 0;
+        top: 20vh;
+    }
+
+    #hits-of-week {
+        top: 40vh;
+    }
+
+    #mix {
+        left: 0;
+        top: 60vh;
+    }
+
+    #best-performers {
+        top: 80vh;
+    }
+
+    #genres {
+        left: 0;
+        top: 100vh;
+    }
+
+    #left-panel {
+        height: 140%;
+    }
+}
+
+@media (max-width: 700px) {
+    #forms {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    body {
+        background: linear-gradient(to top left, #272727 60%, #353535);
+    }
+
+    #left-panel {
+        height: 0;
+        width: 70vh;
+        margin: 0;
+        left: -3vh;
+    }
+
+    .text {
+        font-size: 45px;
+    }
+}
+
+.pg-text {
+    position: absolute;
+    top: 15vh;
+    left: 56vh;
+    font-family: Gill Sans, sans-serif;
+    font-size: 40px;
+    color: rgb(200, 200, 200);
+}
+
+.songs {
+    top: 26vh;
+    left: 55vh;
+    position: absolute;
+    width: 65vh;
+    height: 71%;
+    background: #505050;
+    background-attachment: fixed;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.songs img {
+    z-index: 9;
+    position: relative;
+    margin-left: 5vh;
+    top: 2.5vh;
+    width: 60px;
+    height: 60px;
+}
+
+.songs h1 {
+    position: absolute;
+    z-index: 9;
+    color: #202020;
+    font-size: 20px;
+    margin-left: 15vh;
+    margin-top: 2.5vh;
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.songs h1:hover {
+    width: 500px;
+}
+
+.songs h1:hover + .username {
+    display: none;
+}
+
+.songs2 {
+    top: 26vh;
+    left: 125vh;
+    position: absolute;
+    width: 65vh;
+    height: 71%;
+    background: #505050;
+    background-attachment: fixed;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.songs2 img {
+    z-index: 9;
+    position: relative;
+    margin-left: 5vh;
+    top: 2.5vh;
+    width: 60px;
+    height: 60px;
+}
+
+.songs2 h1 {
+    position: absolute;
+    z-index: 9;
+    color: #202020;
+    font-size: 20px;
+    margin-left: 15vh;
+    margin-top: 2.5vh;
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.songs2 h1:hover {
+    width: 500px;
+}
+
+.songs2 h1:hover + .username {
+    display: none;
+}
+
+.song_user {
+    position: absolute;
+    z-index: 9;
+    color: #202020;
+    font-size: 20px;
+    margin-left: 37vh;
+    margin-top: 2.4vh;
+    text-align: right;
+}
+
+.song_icon {
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,1);
+}
+
+.like {
+    position: absolute;
+    height: 5px;
+    margin-top: -8vh;
+    margin-left: 9vh;
+}
+
+.like button {
+    height: 0;
+    width: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.like img {
+    height: 3vh;
+    width: 3vh;
+}
+
+.songs_search {
+    top: 32vh;
+    left: 57vh;
+    position: absolute;
+    width: 65vh;
+    height: 65%;
+    background: #505050;
+    background-attachment: fixed;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.img_search {
+    z-index: 9;
+    position: relative;
+    margin-left: 5vh;
+    top: 2.5vh;
+    width: 60px;
+    height: 60px;
+}
+
+.songs_search h1 {
+    position: absolute;
+    z-index: 9;
+    color: #202020;
+    font-size: 20px;
+    margin-left: 15vh;
+    margin-top: 2.5vh;
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.songs_search h1:hover {
+    width: 500px;
+}
+
+.songs_search a {
+    position: absolute;
+    z-index: 9;
+    color: #202020;
+    font-size: 20px;
+    margin-left: 37vh;
+    margin-top: 2.4vh;
+    text-align: right;
+}
+
+.songs_search h1:hover + .username {
+    display: none;
+}
+
+.img_search {
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,1);
+}
+
+.img_like {
+    margin-left: 5vh;
+    margin-top: 2.5vh;
+}
+
+audio::-webkit-media-controls-panel {
+	background: #aaa;
+}
+
+audio {
+    margin-left: 17vh;
+    margin-top: 2.5vh;
+    opacity: 0.8;
+}
+
+.song-panel {
+    position: relative;
+    margin-top: -7vh;
+    margin-left: 3vh;
+    background: #aaa;
+    height: 10vh;
+    width: 58vh;
+    border-radius: 3vh;
+}
+
+.add_track {
+    position: absolute;
+    margin-top: 8vh;
+    margin-left: 60vh;
+}
+
+.add_track div {
+    position: relative;
+    top: 3vh;
+    margin: 3vh;
+}
+
+.add_track div input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding: 7px 0;
+    outline: 5;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.add_track div label {
+    position: absolute;
+    margin-top: -24vh;
+    margin-left: -5vh;
+    font-size: 30px;
+    color: #fff;
+}
+
+.add_track h1 {
+    position: relative;
+    top: -12vh;
+    left: 15vh;
+}
+
+.add_track button {
+    background: rgb(220, 220, 220);
+    border: none;
+    border-radius: 10px;
+    color: #303030;
+    cursor: pointer;
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    padding: 6px 28px;
+    outline: none;
+    margin-top: -7vh;
+    margin-left: -2.5vh;
+    position: absolute;
+}
+
+.not_authenticated_dark {
+    position: absolute;
+    left: 52.4vh;
+    top: 17.4vh;
+    width: 74.55%;
+    height: 82.5%;
+    background: #151515;
+    background-attachment: fixed;
+    opacity: 0.95;
+}
+
+.not_authenticated {
+    position: absolute;
+    margin-top: 3vh;
+    margin-left: 60vh;
+}
+
+.not_authenticated h1 {
+    margin-top: 13vh;
+    margin-left: 28vh;
+    font-family: cursive;
+    font-size: 40px;
+    color: rgb(220, 220, 220);
+}
+
+.not_authenticated h3 {
+    margin-top: 25vh;
+    left: -22vh;
+    color: rgb(220, 220, 220);
+}
+
+.not_authenticated h3 a {
+    color: rgb(220, 220, 220);
+}
+
+.not_authenticated h3 a:hover {
+    color: rgb(180, 180, 180);
+}
+
+.genres-list h1 {
+    background: linear-gradient(to top left, #272727 40%, #353535);
+    border: 2px solid #202020;
+    border-radius: 15px;
+    height: 9vh;
+    width: 30vh;
+    color: rgb(185, 185, 185);
+    position: relative;   
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    padding-left: 3vh;
+    padding-top: 2vh;
+    margin: 30px;
+} 
+
+.genres1 {
+    position: relative;
+    left: 52vh;
+    top: -85vh;
+    width: 50vh;
+}
+
+.genres2 {
+    position: relative;
+    left: 90vh;
+    top: -146.8vh;
+    width: 20vh;
+}
+
+.performers {
+    top: 26vh;
+    left: 55vh;
+    position: absolute;
+    width: 65vh;
+    height: 71%;
+    background: #505050;
+    background-attachment: fixed;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.performers img {
+    z-index: 9;
+    position: relative;
+    margin-left: 0.7vh;
+    top: 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.best_performers {
+    position: relative;
+    width: 58vh;
+    height: 9.5vh;
+    margin-top: 2vh;
+    margin-left: 3vh;
+    background: #aaa;
+    border-radius: 15px;
+}
+
+.best_performers h1 {
+    z-index: 9;
+    color: #202020;
+    font-size: 50px;
+    font-weight: 100;
+    margin-left: 10vh;
+    margin-top: -8.3vh;
+    position: absolute;
+}
+
+.icon_user {
+    position: absolute;
+    z-index: 9;
+    height: 10vh;
+    margin-left: -12vh;
+    margin-top: 2vh;
+    border-radius: 150px;
+    width: 10vh;
+}
+
+.delete_song {
+    position: absolute;
+    margin-top: -9.5vh;
+    margin-left: 44vh;
+    background: #909090;
+    border: 1px solid #303030;
+    border-radius: 7px;
+    color: #303030;
+    cursor: pointer;
+    font-family: 'Caveat', sans-serif;
+    font-size: 16px;
+    padding: 1px 28px;
+    outline: none;
+    width: 15vh;
+    height: 3vh;
+}
+
+.add_playlist {
+    position: absolute;
+    margin-top: -6.7vh;
+    margin-left: 17.8vh;
+}
+
+.add_playlist button {
+    opacity: 0;
+    position: absolute;
+    height: 2.3vh;
+    width: 15vh;
+    margin-top: -4.1vh;
+}
+
+.add_playlist img {
+    position: absolute;
+    height: 6vh;
+    width: 5vh;
+    top: -0.2vh;
+    left: -5.3vh;
+}
+
+.change_playlist {
+    display: none;
+    border: 1px solid #202020;
+    border-radius: 5px;
+    position: absolute;
+    background: #303030;
+    z-index: 9;
+    position: absolute;
+    height: 25vh;
+    width: 20vh;
+    margin-top: -12vh;
+    margin-left: 0vh;
+}
+
+.change_playlist h2 {
+    margin-top: 2px;
+    margin-left: 2px;
+    font-size: 15px;
+    color: rgb(200, 200, 200);
+}
+
+.change_playlist h3 {
+    margin-top: -1.5vh;
+    font-size: 15px;
+    color: rgb(200, 200, 200);
+}
+
+.change_playlist hr {
+    margin-top: -1vh;
+}
+
+.list_playlists {
+    margin: 2px;
+    margin-top: 2vh;
+}
+
+.icon_playlist_search {
+    margin-left: 5vh;
+}
+
+.add_playlist:hover > .change_playlist {
+    display: block;
+}
+
+.trash_playlist {
+    position: absolute;
+    z-index: 9;
+    margin-top: 1vh;
+    margin-left: 80%;
+}
+
+.trash_playlist button {
+    background: rgb(190, 190, 190);
+    border-radius: 10px;
+    width: 25vh;
+    height: 5vh;
+    font-size: 20px;
+    color: #303030;
+}
+

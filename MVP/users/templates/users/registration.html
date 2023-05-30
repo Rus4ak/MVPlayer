@@ -1,0 +1,25 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="panel">
+        <section style="top: 40%;" id="register">
+            <h2>Регистрация</h2>
+            <form method="post">
+                {% csrf_token %}
+          
+                {% for field in form %}
+                <div>
+                    {{field}}
+                    <label for="">{{field.label}}</label>
+                </div>
+                {% if field.errors %}
+                <h4>{{field.errors}}</h4>
+                {% endif %}
+                {% endfor %}
+
+                <button type="submit">Регистрация</button>
+            </form>
+        </section>
+    </div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+<div id="panel">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="background_icon">
+            <img src="{{ user_icon.url }}?{{ random_string }}" alt="user_icon" class="icon_user">
+        </div>
+        <div class="username">
+            <h3>Профиль</h3>
+            <h1>{{ user_obj }}</h1>
+        </div>
+
+        {% for field in profile_form %}
+            {% if field.name == 'icon' %}
+                <div class="new_icon">
+                    {{ field }}
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+        <button type="submit" class="save_change">Сохранить</button>
+    </form>
+
+    <a href="{% url 'users:logout' %}" class="a-logout">Выйти с аккаунта</a>
+</div>
+
+{% endblock content %}

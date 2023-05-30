@@ -1,0 +1,31 @@
+{% extends 'main/base_track.html' %}
+{% load static %}
+
+{% block title %} {{ playlist_title }} {% endblock title %}
+
+{% block additions %}
+    <form method="post" action="{% url 'main:delete_playlist' playlist_id=playlist_id %}" class="trash_playlist">
+        {% csrf_token %}
+        <button type="submit">Удалить плейлист</button>
+    </form>
+{% endblock additions %}
+
+{% block div-song %}
+    {% for title in titles %}
+        <form method="post" action="{% url 'main:delete_song_playlist' song_id=s.id playlist_id=playlist_id %}">
+            {% csrf_token %}
+            <button type="submit" class="delete_song">Удалить</button>
+        </form>
+    {% endfor %}
+{% endblock div-song %}
+
+{% block div-song2 %}
+    {% for title in titles %}
+        <form method="post" action="{% url 'main:delete_song_playlist' song_id=s.id playlist_id=playlist_id %}">
+            {% csrf_token %}
+            <button type="submit" class="delete_song">Удалить</button>
+        </form>
+    {% endfor %}
+{% endblock div-song2 %}
+
+

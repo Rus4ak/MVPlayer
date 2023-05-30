@@ -1,0 +1,130 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="pg-text">{% block title %} {% endblock title %}</h1>
+
+{% block additions %}
+
+{% endblock additions %}
+
+<div class="songs">
+    {% for s in song %}
+        <h1>{{ s.title }}</h1>
+        <div class="username"><a href="{% url 'main:user' user_id=s.user.id %}" class="song_user">{{ s.user }}</a></div>
+        <img src="{{ s.icon.url }}" alt="icon" class="song_icon">
+        <div class="song-panel">
+            <audio controls preload="auto">
+                <source src="{{ MEDIA_ROOT }}/{{ s.audio_file }}" type="audio/mpeg">
+            </audio>
+        </div>
+        <form method="post" action="{% url 'main:like' song_id=s.id %}" class="like">
+            {% csrf_token %}
+            <button type="submit">
+                {% if request.user in s.like.all %}
+                    <img src="{% static 'img/like_on.png' %}?v={{ random_number }}" alt="like_on">
+                {% else %}
+                    <img src="{% static 'img/like_off.png' %}?v={{ random_number }}" alt="like_off">
+                {% endif %}
+            </button>
+        </form>
+        <div class="add_playlist">
+            <div class="change_playlist">
+                <h2>Добавить в плейлист</h1>
+                <hr color="#505050">
+                {% for title in titles %}
+                    <form method="post" action="{% url 'main:add_song_playlist' song_id=s.id playlist_id=title.id %}">
+                        {% csrf_token %}
+                        <div class="list_playlists">
+                            <h3>{{ title.title }}</h3>
+                            <button type="submit"></button>
+                        </div>
+                    </form>
+                {% endfor %}
+            </div>
+            <img src="{% static 'img/add_playlist.png' %}" alt="add in playlist">
+        </div>
+        {% block div-song %}
+
+        {% endblock div-song %}
+    {% endfor %}
+</div>
+
+<div class="songs2">
+    {% for s in song2 %}
+        <h1>{{s.title}}</h1>
+        <div class="username"><a href="{% url 'main:user' user_id=s.user.id %}" class="song_user">{{ s.user }}</a></div>
+        <img src="{{s.icon.url}}" alt="icon" class="song_icon">
+        <div class="song-panel">
+            <audio controls preload="auto">
+                <source src="{{ MEDIA_ROOT }}/{{ s.audio_file }}" type="audio/mpeg">
+            </audio>
+        </div>
+        <form method="post" action="{% url 'main:like' song_id=s.id %}" class="like">
+            {% csrf_token %}
+            <button type="submit">
+                {% if s in liked_songs %}
+                    <img src="{% static 'img/like_on.png' %}?v={{ random_number }}" alt="like_on">
+                {% else %}
+                    <img src="{% static 'img/like_off.png' %}?v={{ random_number }}" alt="like_off">
+                {% endif %}
+            </button>
+        </form>
+        <div class="add_playlist">
+            <div class="change_playlist">
+                <h2>Добавить в плейлист</h1>
+                <hr color="#505050">
+                {% for title in titles %}
+                    <form method="post" action="{% url 'main:add_song_playlist' song_id=s.id playlist_id=title.id %}">
+                        {% csrf_token %}
+                        <div class="list_playlists">
+                            <h3>{{ title.title }}</h3>
+                            <button type="submit"></button>
+                        </div>
+                    </form>
+                {% endfor %}
+            </div>
+            <img src="{% static 'img/add_playlist.png' %}" alt="add in playlist">
+        </div>
+        {% block div-song2 %}
+
+        {% endblock div-song2 %}
+    {% endfor %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // JavaScript-обработчик нажатия на кнопку лайка
+$('.like button').click(function(event) {
+    event.preventDefault(); // Предотвращает отправку формы по умолчанию
+
+    var form = $(this).closest('form');
+    var url = form.attr('action');
+
+    // Отправка асинхронного POST-запроса на сервер
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: form.serialize(), // Сериализация данных формы
+        success: function(response) {
+            // Обработка успешного ответа от сервера
+            // В response будет содержаться новое состояние лайка
+
+            // Обновление изображения лайка
+            var likeImage = form.find('img');
+            if (response.is_liked) {
+                likeImage.attr('src', '{% static "img/like_on.png" %}?v=' + response.random_number);
+            } else {
+                likeImage.attr('src', '{% static "img/like_off.png" %}?v=' + response.random_number);
+            }
+        },
+        error: function(xhr, errmsg, err) {
+            // Обработка ошибки при выполнении запроса
+            console.log(xhr.status + ': ' + xhr.responseText);
+        }
+    });
+});
+
+</script>
+
+{% endblock content %}

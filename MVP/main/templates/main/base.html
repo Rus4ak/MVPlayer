@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main/index.css' %}">
+    <title>{% block title %}MVPlayer{% endblock title %}</title>
+</head>
+<body> 
+    <img src="{% static 'img/banner.png' %}" alt="banner", id="banner">
+
+    <a href="{% url 'main:index' %}"><img src="{% static 'img/icon.png' %}" alt="Icon" id="icon"></a>
+    <a href="{% url 'main:index' %}"><h1 id="name">MVPlayer</h1></a>
+
+    {% if user.is_authenticated %}
+    <a href="{% url 'users:profile' %}">
+        <img src="{{ icon_user }}" alt="icon_user_default" class="icon_user">
+    </a>
+
+    {% else %}
+    <h3 class="autorization">
+        <a href="{% url 'users:login' %}" class="a-login">Вход</a> /
+        <a href="{% url 'users:registration' %}" class="a-login">Регистрация</a>
+    </h3>
+    {% endif %}
+    
+
+    <div id="left-panel">
+        <div class="text">
+            <a href="{% url 'main:index' %}" class="text">Главная страница</a>
+            <a href="{% url 'main:my_track' %}" class="text">Мои треки</a>
+            <a href="{% url 'main:add_track' %}" class="text">Добавить трек</a>
+           
+            <div class="text2">
+                <a href="{% url 'main:favourite_song' %}" class="text2">Любимые треки</a>
+                <a href="{% url 'main:create_playlist' %}" class="text2">Создать плейлист</a>
+              
+                <ul class="playlist">
+                    {% if user.is_authenticated %}
+                        {% for title in titles %}
+                            <li><a href="{% url 'main:playlist' playlist=title.id %}" class="playlist">{{ title.title }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    {% block content %}
+    
+    {% endblock content %}
+
+</body>
+</html>

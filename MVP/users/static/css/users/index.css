@@ -1,0 +1,279 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to top left, #333333 50%, #454545);
+    background-attachment: fixed;
+}
+
+#banner {
+    margin: 0;
+    height: 130px;
+    width: 100%;
+    position: relative;
+}
+
+#icon {
+    left: 8px;
+    top: 11px;
+    height: 70px;
+    margin: 10px;
+    position: absolute;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 60px;
+    position: absolute;
+    top: -18px;
+    margin-left: 95px;
+    text-shadow: 4px 4px 8px rgb(47, 47, 47);
+}
+
+@media (max-width: 650px) {
+    #name {
+        display: none;
+    }
+}
+
+#autorization {
+    right: 10px;
+    text-align: right;
+    position: relative;
+    top: -155px;
+    font-size: 25px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.a-logout {
+    position: absolute;
+    font-size: 20px;
+    top: 70vh;
+    left: 31vh;
+    color: rgb(220, 220, 220);
+}
+
+.a-logout:hover {
+    color: rgb(190, 190, 190);
+}
+
+.a-login:hover {
+    color: #202020;
+}
+
+#panel {
+    position: absolute;
+    left: 37%;
+    top: 20vh;
+    width: 400px;
+    height: 75%;
+    background: #505050;
+    background-attachment: fixed;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+#login {
+    color: white;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+section {
+    border-radius: 5px;
+    margin-top: center;
+    padding: 40px;
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+    width: 400px;
+}
+
+section h2 {
+    color: #fff;
+    font-family: 'Caveat', sans-serif;
+    font-size: 30px;
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+}
+
+section div {
+    position: relative;
+}
+
+section div input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding: 7px 0;
+    outline: none;
+    width: 100%;
+}
+
+section div label {
+    color: rgba(255,255,255,0.5);
+    font-size: 22px;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 7px 0;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    transition: .5s;
+}
+
+section h4 {
+    color: #fff;
+    margin-top: -3vh;
+    margin-left: -3vh;
+}
+
+section li {
+    color: #fff;
+    margin-top: -2vh;
+    margin-left: 4vh;
+    margin-bottom: 2vh;
+}
+
+section li h4 {
+    color: #fff;
+    margin-top: -18px;
+    margin-left: 2vh;
+    margin-bottom: 2vh;
+}
+
+
+section div input:focus ~ label,
+section div input:valid ~ label {
+    display: none;
+}
+
+section button[type="submit"] {
+    background: rgb(220, 220, 220);
+    border: none;
+    border-radius: 10px;
+    color: #303030;
+    cursor: pointer;
+    font-family: 'Caveat', sans-serif;
+    font-size: 24px;
+    padding: 6px 28px;
+    outline: none;
+}
+
+section a {
+    position: absolute;
+    margin-top: -5.5vh;
+    margin-left: 24.5vh;
+    font-size: 20px;
+    color: rgb(210, 210, 210);
+}
+
+section a:hover {
+    color: rgb(230, 230, 230);
+}
+
+.password_reset_complete {
+    margin: 2vh;
+    font-size: 20px;
+    color: rgb(220, 220, 220);
+}
+
+.password_reset_complete a {
+    position: absolute;
+    margin-top: 0.4vh;
+    margin-left: 2vh;
+    font-size: 17px;
+    color: lightskyblue;
+    text-decoration: underline;
+}
+
+.password_reset_complete a:hover {
+    color: lightblue;
+}
+
+#register {
+    margin-top: -33vh;
+}
+
+.icon_user {
+    height: 15vh;
+    margin-top: 1.5vh;
+    margin-left: 1vh;
+    border-radius: 150px;
+    height: 15vh;
+    width: 15vh;
+}
+
+.new_icon {
+    position: absolute;
+    top: 0vh;
+    margin-top: 1.5vh;
+    margin-left: 1vh;
+    border-radius: 150px;
+    opacity: 0;
+    height: 15vh;
+    width: 15.1vh;
+}
+
+.new_icon input {
+    border-radius: 150px;
+    height: 15vh;
+    width: 15vh;
+    padding-top: 6vh;
+}
+
+.new_icon:hover {
+    background: #202020;
+    opacity: 0.9;
+}
+
+.username {
+    position: absolute;
+    margin-left: 16vh;
+    margin-top: -18vh;
+    color: #101010;
+}
+
+.username h1 {
+    margin-top: -2vh;
+    margin-left: 1.5vh;
+}
+
+.save_change {
+    position: absolute;
+    margin-top: 51.5vh;
+    margin-left: 1vh;
+    background: rgb(200, 200, 200);
+    border: none;
+    border-radius: 10px;
+    color: #202020;
+    cursor: pointer;
+    font-family: 'Caveat', sans-serif;
+    font-size: 18px;
+    padding: 5px 28px;
+    outline: none;
+    width: 20vh;
+    height: 4vh;
+}
+
+.background_icon {
+    border-radius: 10px;
+    background-color: #757575;
+    height: 18vh;
+}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/users/index.css' %}">
+    <title>{% block title %}MVPlayer{% endblock title %}</title>
+</head>
+<body> 
+    <img src="{% static 'img/banner.png' %}" alt="banner", id="banner">
+
+    <img src="{% static 'img/icon.png' %}" alt="Icon" id="icon">
+    <a href="/"><h1 id="name">MVPlayer</h1></a>
+
+    {% if not user.is_authenticated %}
+        <h3 id="autorization">
+            <a href="{% url 'users:login' %}" class="a-login">Вход</a> /
+            <a href="{% url 'users:registration' %}" class="a-login">Регистрация</a>
+        </h3>
+    {% endif %}
+    
+    {% block content %}
+    
+    {% endblock content %}
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="{% url 'main:search' %}" method="post">
+    {% csrf_token %}
+    <div class="search">
+      <input type="text" class="search-txt" name="search_query" placeholder="Искать здесь...">
+      <button type="submit"><img src="{% static 'img/search.png' %}" alt="search-icon" class="search-icon"></button>
+    </div>
+</form>
+
+<div class="forms">
+    <a href="{% url 'main:best_tracks' %}">
+        <div id="best-tracks">
+            <h1 id="best-tracks-text">Лучшие треки</h1>
+        </div>
+    </a>
+
+    <a href="{% url 'main:novelties' %}">
+        <div id="novelties">
+            <h1 id="novelties-text">Новинки</h1>
+        </div>
+    </a>
+
+    <a href="{% url 'main:hits_of_week' %}">
+        <div id="hits-of-week">
+            <h1 id="hits-of-week-text">Топ-хиты недели</h1>
+        </div>
+    </a>
+
+    <a href="{% url 'main:mix' %}">
+        <div id="mix">
+            <h1 id="mix-text">Микс дня</h1>
+        </div>
+    </a>
+
+    <a href="{% url 'main:best_performers' %}">
+        <div id="best-performers">
+            <h1 id="best-performers-text">Лучшие исполнители</h1>
+        </div>
+    </a>
+
+    <a href="{% url 'main:genres' %}">
+        <div id="genres">
+            <h1 id="genres-text">Жанры</h1>
+        </div>
+    </a>
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<h1 class="pg-text">Лучшие исполнители</h1>
+
+<div class="performers">
+    {% for user in users %}
+    <a href="{% url 'main:user' user_id=user.user_id %}">
+        <div class="best_performers">
+            <img src="{{ user.icon }}" alt="user-icon">        
+            <h1>{{ user.username }}</h1>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+
+
+<div class="performers2">
+    {% for user in users2 %}
+    <a href="{% url 'main:user' user_id=user.user_id %}">
+        <div class="best_performers">
+            <img src="{{ user.icon }}" alt="user-icon">        
+            <h1>{{ user.username }}</h1>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock content %}

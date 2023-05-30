@@ -1,0 +1,15 @@
+<span class="btn btn-default btn-file">
+    <input type="{{ widget.type }}" name="{{ widget.name }}" class="{{ widget.css_classes }}" {% include "django/forms/widgets/attrs.html" %}>
+</span>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var input = document.querySelector('.btn-file input[type="file"]');
+    input.onchange = function(e) {
+        var span = this.parentNode;
+        span.textContent = '';
+        span.appendChild(input);
+    };
+});
+</script>
+

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1 class="pg-text">Жанры</h1>
+
+<div class="genres1">
+    {% for genre in genres %}
+        <a href="{% url 'main:genre' genre=genre %}" class="genres-list">
+            <h1>{{ genre }}</h1>    
+        </a>
+    {% endfor %}
+</div>
+
+<div class="genres2">
+    {% for genre in genres2 %}
+        <a href="{% url 'main:genre' genre=genre %}" class="genres-list">
+            <h1>{{ genre }}</h1>    
+        </a>
+    {% endfor %}
+</div>
+
+{% endblock content %}

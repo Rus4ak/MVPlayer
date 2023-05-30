@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data" class="add_track">
+    {% csrf_token %}
+    {% for field in form %}
+        <div>
+            <h1>{{field}}</h1>
+            <label>{{field.label}} - </label>
+        </div>
+    {% endfor %}
+    <button type="submit">Загрузить</button>
+</form>
+
+{% endblock content %}
