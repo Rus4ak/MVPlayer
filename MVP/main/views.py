@@ -129,7 +129,7 @@ def best_tracks(request: HttpRequest) -> HttpResponse:
     if not song:
         song = Song.objects.annotate(likes_count=Count('like')).order_by('-likes_count')
         cache.set('best_track', song, 60 * 60 * 24)
-
+ 
     context = {
         'song': song[:6],
         'song2': song[6:12],

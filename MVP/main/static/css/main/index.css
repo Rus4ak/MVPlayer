@@ -728,14 +728,13 @@ audio {
 .genres1 {
     position: relative;
     left: 52vh;
-    top: -85vh;
     width: 50vh;
 }
 
 .genres2 {
     position: relative;
     left: 90vh;
-    top: -146.8vh;
+    top: -61.8vh;
     width: 20vh;
 }
 
