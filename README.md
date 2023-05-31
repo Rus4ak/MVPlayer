@@ -1,2 +1,2 @@
 # MVPlayer
-MVPlayer - A music player written in Django with the ability to add, listen, delete tracks, like them, add them to a playlist, etc. this site also implements search, various sorting, authentication and a user profile in which he can change data about himself.
+MVPlayer - A music player site developed using Django framework. It has the following features: songs management, playback, deletion, songs liking, playlist creation, etc. Additionally, the application incorporates robust search capabilities, versatile sorting options, user authentication, and a personalized user profile where individuals can modify their personal information.
