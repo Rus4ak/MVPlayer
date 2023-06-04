@@ -12,9 +12,6 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm, UserForm, ProfileForm
 from main.models import Profile
 
-import os
-import glob
-
 # Create your views here.
 
 class Register(FormView):
@@ -86,7 +83,7 @@ def profile(request):
     else:
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
-    print(user_obj)
+    
     context = {
         'user_obj': user_obj[0],
         'user_icon': user_icon,

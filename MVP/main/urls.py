@@ -25,7 +25,8 @@ urlpatterns = [
     path('delete-song/<int:song_id>', views.delete_song, name='delete_song'),
     path('add-song-playlist/<int:song_id>/<int:playlist_id>', views.add_song_playlist, name='add_song_playlist'),
     path('delete-song-playlist/<int:song_id>/<int:playlist_id>', views.delete_song_playlist, name='delete_song_playlist'),
-    path('delete-playlist/<int:playlist_id>', views.delete_playlist, name='delete_playlist')
+    path('delete-playlist/<int:playlist_id>', views.delete_playlist, name='delete_playlist'),
+    path('edit-playlist/<int:playlist_id>', views.edit_playlist, name='edit_playlist')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

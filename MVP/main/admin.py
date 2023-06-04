@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import (
     Song,
     Genre,
-    Profile
+    Profile,
+    Playlist
 )
 
 # Register your models here.
@@ -10,5 +11,6 @@ from .models import (
 admin.site.register((
     Song,
     Genre,
-    Profile
+    Profile,
+    Playlist
 ))

@@ -793,19 +793,29 @@ audio {
 
 .delete_song {
     position: absolute;
-    margin-top: -9.5vh;
-    margin-left: 44vh;
-    background: #909090;
-    border: 1px solid #303030;
-    border-radius: 7px;
-    color: #303030;
-    cursor: pointer;
-    font-family: 'Caveat', sans-serif;
-    font-size: 16px;
-    padding: 1px 28px;
-    outline: none;
-    width: 15vh;
-    height: 3vh;
+    margin-top: -11.7vh;
+    margin-left: 50.8vh;
+}
+
+.delete_song button {
+    position: absolute;
+    z-index: 9;
+    opacity: 1; 
+    width: 18px;
+    height: 23px;
+    margin-top: 2.5vh;
+    margin-left: 5vh;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.delete_song img {
+    opacity: 0.9;
+    height: 23px;
+    width: 18px;
+    top: -0.5vh;
+    left: -6vh;
 }
 
 .add_playlist {
@@ -872,6 +882,62 @@ audio {
 
 .add_playlist:hover > .change_playlist {
     display: block;
+}
+
+.edit_playlist {
+    position: absolute;
+    z-index: 9;
+    margin-top: 1vh;
+    margin-left: 158vh;
+}
+
+.edit_playlist button {
+    background: rgb(190, 190, 190);
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+}
+
+.edit_playlist img {
+    height: 30px;
+    margin-left: -3.5px;
+    margin-top: 1px;
+}
+
+.edit_form {
+    position: absolute;
+    margin-top: 1vh;
+    margin-left: 55vh;
+}
+
+.edit_form button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.edit_form input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: Gill Sans, sans-serif;
+    font-size: 35px;
+    color: rgb(200, 200, 200);
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding: 0px 0;
+    outline: none;
+    width: 40%;
+}
+
+.edit_form img {
+    height: 30px;
+}
+
+.not_save_edit {
+    position: absolute;
+    margin-top: 0vh;
+    margin-left: 31vh;
 }
 
 .trash_playlist {

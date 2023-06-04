@@ -4,10 +4,6 @@
 {% block content %}
 <h1 class="pg-text">{% block title %} {% endblock title %}</h1>
 
-{% block additions %}
-
-{% endblock additions %}
-
 <div class="songs">
     {% for s in song %}
         <h1>{{ s.title }}</h1>
@@ -44,9 +40,6 @@
             </div>
             <img src="{% static 'img/add_playlist.png' %}" alt="add in playlist">
         </div>
-        {% block div-song %}
-
-        {% endblock div-song %}
     {% endfor %}
 </div>
 
@@ -86,9 +79,6 @@
             </div>
             <img src="{% static 'img/add_playlist.png' %}" alt="add in playlist">
         </div>
-        {% block div-song2 %}
-
-        {% endblock div-song2 %}
     {% endfor %}
 </div>
 

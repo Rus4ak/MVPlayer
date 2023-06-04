@@ -29,6 +29,12 @@ def delete_cache_playlist(sender, instance, **kwargs):
     cache.clear()
 
 
+# Clear cache on playlist change
+@receiver(post_save, sender=Playlist)
+def delete_cache_edit_playlist(sender, instance, **kwargs):
+    cache.clear()
+
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:

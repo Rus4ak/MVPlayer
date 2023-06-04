@@ -43,10 +43,14 @@
             <img src="{% static 'img/add_playlist.png' %}" alt="add in playlist">
         </div>
 
-        <form method="post" action="{% url 'main:delete_song' song_id=s.id %}">
-            {% csrf_token %}
-            <button type="submit" class="delete_song">Удалить</button>
-        </form>
+        <div class="delete_song">
+            <form method="post" action="{% url 'main:delete_song' song_id=s.id %}">
+                {% csrf_token %}
+                <button type="submit">
+                    <img src="{% static 'img/trash.png' %}" alt="trash">
+                </button>
+            </form>
+        </div>
     {% endfor %}
 </div>
 

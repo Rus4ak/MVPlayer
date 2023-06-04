@@ -89,6 +89,8 @@ def add_track(request: HttpRequest) -> HttpResponse:
 
                 song.save()
                 form.save_m2m()
+
+                return redirect('/my-track/')
         else:
             form = AudioFileForm()
 
@@ -277,6 +279,8 @@ def create_playlist(request: HttpRequest) -> HttpResponse:
                 playlist.user = request.user
                 playlist.save()
                 form.save_m2m()
+                
+                return redirect(f'/playlist/{playlist.id}')
         else:
             form = PlaylistFileForm()
 
@@ -422,4 +426,15 @@ def delete_playlist(request:HttpRequest, playlist_id:int) -> HttpResponse:
         playlist.delete()
 
     return redirect('/')
+
+
+def edit_playlist(request:HttpRequest, playlist_id:int) -> HttpResponse:
+    if request.method == 'POST':
+        playlist_title = request.POST.get('new_playlist_name')
+        old_playlist_title = Playlist.objects.get(id=playlist_id)
+
+        old_playlist_title.title = playlist_title
+        old_playlist_title.save()
+
+        return redirect(request.META.get('HTTP_REFERER'))
     
