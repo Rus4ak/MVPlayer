@@ -389,8 +389,8 @@ def user_songs(request: HttpRequest, user_id: User) -> HttpResponse:
 
 def delete_song(request: HttpRequest, song_id: int) -> HttpResponse:
     song = Song.objects.get(id=song_id)
-    song_path = Path(f'{settings.MEDIA_ROOT}\{str(song.audio_file)[6:]}')
-    icon_path = Path(f'{settings.MEDIA_ROOT}\{song.icon}')
+    song_path = Path(f'{settings.MEDIA_ROOT}/{str(song.audio_file)[6:]}')
+    icon_path = Path(f'{settings.MEDIA_ROOT}/{song.icon}')
     
     if request.method == 'POST':
         song_path.unlink()
