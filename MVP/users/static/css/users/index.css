@@ -138,6 +138,16 @@ section div label {
     transition: .5s;
 }
 
+section div h3 {
+    position: absolute;
+    color: rgba(255,255,255,0.5);
+    font-size: 22px;
+    font-weight: 100;
+    margin-top: -8vh;
+    margin-left: 0.5vh;
+    pointer-events: none;
+}
+
 section h4 {
     color: #fff;
     margin-top: -3vh;
@@ -161,6 +171,14 @@ section li h4 {
 
 section div input:focus ~ label,
 section div input:valid ~ label {
+    display: none;
+}
+
+section div input:focus + h3 {
+    display: none;
+}  
+
+section div h3.hide {
     display: none;
 }
 
@@ -211,6 +229,22 @@ section a:hover {
     margin-top: -33vh;
 }
 
+.username input {
+    position: absolute;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #101010;
+    color: #101010;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding: 2px 0;
+    outline: none;
+    width: 150%;
+    margin-top: -1vh;
+    margin-left: 1.5vh;
+}
+
 .icon_user {
     height: 15vh;
     margin-top: 1.5vh;
@@ -251,13 +285,106 @@ section a:hover {
 }
 
 .username h1 {
+    position: absolute;
     margin-top: -2vh;
     margin-left: 1.5vh;
 }
 
+.edit_username {
+    position: absolute;
+    z-index: 9;
+    margin-top: -1.2vh;
+    margin-left: 32vh;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.edit_username img {
+    height: 22px;
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+.settings_profile {
+    position: absolute;
+    margin-top: 0.5vh;
+    margin-left: 1vh;
+}
+
+.settings_email {
+    margin-top: 5.5vh;
+}
+
+.email {
+    position: absolute;
+    margin: 5px;
+}
+
+.email h1 {
+    position: absolute;
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.user_obj_email {
+    position: absolute;
+    left: 9.5vh;
+}
+
+.edit_email img {
+    position: absolute;
+    height: 22px;
+    margin-left: 48vh;
+    margin-top: 1.7vh;
+}
+
+.new_email {
+    position: absolute;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #101010;
+    color: #101010;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding: 2px 0;
+    outline: none;
+    width: 45%;
+    margin-top: 1vh;
+    margin-left: 11vh;
+}
+
+.error_email {
+    position: absolute;
+    margin-top: 41.5vh;
+    margin-left: -1vh;
+    color: rgb(210, 210, 210);
+}
+
+.settings_password {
+    position: absolute;
+    margin: 5px;
+    margin-top: 40px;
+}
+
+.settings_password a {
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.settings_password a:hover {
+    color: #252525;
+}
+
 .save_change {
     position: absolute;
-    margin-top: 51.5vh;
+    margin-top: 46vh;
     margin-left: 1vh;
     background: rgb(200, 200, 200);
     border: none;

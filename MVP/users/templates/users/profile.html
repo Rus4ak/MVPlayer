@@ -1,4 +1,5 @@
 {% extends 'users/base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -9,8 +10,14 @@
             <img src="{{ user_icon.url }}?{{ random_string }}" alt="user_icon" class="icon_user">
         </div>
         <div class="username">
-            <h3>Профиль</h3>
-            <h1>{{ user_obj }}</h1>
+            <h3>Профиль</h3>    
+            <h1 class="title_name">{{ user_obj.username }}</h1>
+
+            <div class="edit_username" onclick="editUsername()">
+                <img src="{% static 'img/edit.png' %}" alt="edit">
+            </div>
+
+            <input type="text" name="new_username" class="new_username" style="display: none;">
         </div>
 
         {% for field in profile_form %}
@@ -21,10 +28,52 @@
             {% endif %}
         {% endfor %}
         
+        <h1 class="settings_profile">Настройки профиля</h1>
+
+        <div class="settings_email">
+            <div class="email">
+                <h1>Почта: </h1>
+                <h1 class="user_obj_email">{{ user_obj.email }}</h1>
+            </div>
+
+            <div class="edit_email" onclick="editEmail()">
+                <img src="{% static 'img/edit.png' %}" alt="edit">
+            </div>
+
+            <input type="text" name="new_email" class="new_email" style="display: none;">
+            {% if error_email %}
+                <ul class="error_email">
+                    <li>Неправильный адрес эл. почты</li>
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="settings_password">
+            <a href="{% url 'users:change_password' user_id=user_obj.id %}">Изменить пароль</a>
+        </div>
+
         <button type="submit" class="save_change">Сохранить</button>
     </form>
 
     <a href="{% url 'users:logout' %}" class="a-logout">Выйти с аккаунта</a>
 </div>
+
+<script>
+function editUsername() {
+    var username = document.querySelector('.title_name');
+    var editForm = document.querySelector('.new_username');
+    
+    username.style.display = 'none';
+    editForm.style.display = 'block';
+}
+
+function editEmail() {
+    var email = document.querySelector('.user_obj_email');
+    var editForm = document.querySelector('.new_email');
+
+    email.style.display = 'none';
+    editForm.style.display = 'block';
+}
+</script>
 
 {% endblock content %}

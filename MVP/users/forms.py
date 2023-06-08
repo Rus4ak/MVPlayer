@@ -37,8 +37,3 @@ class ProfileForm(forms.ModelForm):
             'icon': forms.ClearableFileInput(attrs={'label': ('Выберите файл')})
         }
 
-
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ('username', 'email', 'first_name', 'last_name')
