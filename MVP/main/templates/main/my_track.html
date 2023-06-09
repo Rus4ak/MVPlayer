@@ -7,7 +7,7 @@
 <div class="songs">
     {% for s in song %}
         <h1>{{s.title}}</h1>
-        <img src="{{s.icon.url}}" alt="icon">
+        <img src="{{s.icon.url}}" alt="icon" class="song_icon">
 
         <div class="song-panel">
             <audio controls>
