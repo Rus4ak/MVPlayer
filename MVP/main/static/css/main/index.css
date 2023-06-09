@@ -670,6 +670,21 @@ audio {
     position: absolute;
 }
 
+#loading_gif {
+    position: absolute;
+    margin-top: 55.5vh;
+    margin-left: 82vh;
+}
+
+#loading_gif img {
+    position: absolute;
+    height: 35px;
+}
+
+.hidden {
+    display: none;
+}
+
 .not_authenticated_dark {
     position: absolute;
     left: 52.4vh;

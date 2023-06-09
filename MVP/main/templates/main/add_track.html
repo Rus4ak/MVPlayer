@@ -1,6 +1,11 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block content %}
+
+<div id="loading_gif" class="hidden">
+    <img src="{% static 'img/load_gif.gif' %}" alt="load_gif">
+</div>
 
 <form method="post" enctype="multipart/form-data" class="add_track">
     {% csrf_token %}
@@ -10,7 +15,26 @@
             <label>{{field.label}} - </label>
         </div>
     {% endfor %}
-    <button type="submit">Загрузить</button>
+    <button type="submit" onclick="submitForm()">Загрузить</button>
 </form>
+
+<script>
+    function submitForm() {
+        var form = document.querySelector('.add_track');
+        var requiredFields = form.querySelectorAll('[required]');
+        var isValid = true;
+
+        requiredFields.forEach(function(field) {
+            if (!field.value) {
+                isValid = false;
+            }
+        });
+    
+        if (isValid) {
+            var loading = document.getElementById('loading_gif');
+            loading.classList.remove('hidden');
+        }
+    }
+</script>
 
 {% endblock content %}
