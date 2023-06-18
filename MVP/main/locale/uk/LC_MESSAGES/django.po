@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 16:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\main\forms.py:7 .\main\forms.py:19 .\main\models.py:22 .\main\models.py:42
+msgid "Название"
+msgstr "Назва"
+
+#: .\main\forms.py:8 .\main\models.py:23
+msgid "Иконка"
+msgstr "Іконка"
+
+#: .\main\forms.py:9 .\main\models.py:27
+msgid "Аудио файл"
+msgstr "Аудіо файл"
+
+#: .\main\forms.py:10 .\main\models.py:30
+msgid "Жанр"
+msgstr "Жанр"
+
+#: .\main\forms.py:22 .\main\models.py:43
+msgid "Музыка"
+msgstr "Музика"
+
+#: .\main\templates\main\add_track.html:19
+#: .\main\templates\main\create_playlist.html:14
+msgid "Загрузить"
+msgstr "Завантажити"
+
+#: .\main\templates\main\base.html:26 .\main\templates\main\not_login.html:10
+msgid "Вход"
+msgstr "Увійти"
+
+#: .\main\templates\main\base.html:27 .\main\templates\main\not_login.html:11
+msgid "Регистрация"
+msgstr "Реєстрація"
+
+#: .\main\templates\main\base.html:34
+msgid "Главная страница"
+msgstr "Головна сторінка"
+
+#: .\main\templates\main\base.html:35 .\main\templates\main\my_track.html:7
+msgid "Мои треки"
+msgstr "Мої треки"
+
+#: .\main\templates\main\base.html:36
+msgid "Добавить трек"
+msgstr "Добавити трек"
+
+#: .\main\templates\main\base.html:39
+#: .\main\templates\main\favourite_track.html:4
+msgid "Любимые треки"
+msgstr "Улюблені треки"
+
+#: .\main\templates\main\base.html:40
+msgid "Создать плейлист"
+msgstr "Створити плейлист"
+
+#: .\main\templates\main\base_track.html:30
+#: .\main\templates\main\base_track.html:69
+#: .\main\templates\main\my_track.html:32
+#: .\main\templates\main\playlist.html:54
+#: .\main\templates\main\playlist.html:103 .\main\templates\main\search.html:36
+msgid "Добавить в плейлист"
+msgstr "Додати до плейлисту"
+
+#: .\main\templates\main\bestPerformers.html:6
+#: .\main\templates\main\index.html:41
+msgid "Лучшие исполнители"
+msgstr "Найкращі виконавці"
+
+#: .\main\templates\main\bestTracks.html:4 .\main\templates\main\index.html:17
+msgid "Лучшие треки"
+msgstr "Найкращі треки"
+
+#: .\main\templates\main\genres.html:5 .\main\templates\main\index.html:47
+msgid "Жанры"
+msgstr "Жанри"
+
+#: .\main\templates\main\hits_of_week.html:4
+#: .\main\templates\main\index.html:29
+msgid "Топ-хиты недели"
+msgstr "Топ-хіти тижня"
+
+#: .\main\templates\main\index.html:9 .\main\templates\main\search.html:9
+msgid "Искать здесь..."
+msgstr "Шукати тут..."
+
+#: .\main\templates\main\index.html:23 .\main\templates\main\novelties.html:4
+msgid "Новинки"
+msgstr "Новинки"
+
+#: .\main\templates\main\index.html:35 .\main\templates\main\mix.html:4
+msgid "Микс дня"
+msgstr "Мікс дня"
+
+#: .\main\templates\main\not_login.html:8
+msgid "Необходимо авторизоваться"
+msgstr "Необхідно авторизуватися"
+
+#: .\main\templates\main\playlist.html:10
+msgid "Удалить плейлист"
+msgstr "Видалити плейлист"

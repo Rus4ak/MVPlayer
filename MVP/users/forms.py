@@ -1,14 +1,24 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.utils.translation import gettext_lazy as _
 from django.forms.widgets import ClearableFileInput
 
 from main.models import Profile
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-
+    username = forms.CharField(label=_('Логин'))
+    email = forms.EmailField(label=_('Почта'), required=True)
+    password1 = forms.CharField(
+        widget=forms.PasswordInput,
+        label=_('Пароль')
+    )
+    password2 = forms.CharField(
+        widget=forms.PasswordInput,
+        label=_('Повторить пароль')
+    )
+    
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
@@ -28,12 +38,12 @@ class FileInputWidget(ClearableFileInput):
 
 
 class ProfileForm(forms.ModelForm):
-    icon = forms.ImageField(widget=FileInputWidget)
+    icon = forms.ImageField(widget=FileInputWidget, label=_('Иконка'))
 
     class Meta:
         model = Profile
         fields = ('icon',)
         widgets = {
-            'icon': forms.ClearableFileInput(attrs={'label': ('Выберите файл')})
+            'icon': forms.ClearableFileInput(attrs={'label': _('Выберите файл')})
         }
 

@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,31 +23,31 @@
 
     {% else %}
     <h3 class="autorization">
-        <a href="{% url 'users:login' %}" class="a-login">Вход</a> /
-        <a href="{% url 'users:registration' %}" class="a-login">Регистрация</a>
+        <a href="{% url 'users:login' %}" class="a-login">{% trans 'Вход' %}</a> /
+        <a href="{% url 'users:registration' %}" class="a-login">{% trans 'Регистрация' %}</a>
     </h3>
     {% endif %}
     
 
     <div id="left-panel">
         <div class="text">
-            <a href="{% url 'main:index' %}" class="text">Главная страница</a>
-            <a href="{% url 'main:my_track' %}" class="text">Мои треки</a>
-            <a href="{% url 'main:add_track' %}" class="text">Добавить трек</a>
-           
-            <div class="text2">
-                <a href="{% url 'main:favourite_song' %}" class="text2">Любимые треки</a>
-                <a href="{% url 'main:create_playlist' %}" class="text2">Создать плейлист</a>
-              
-                <ul class="playlist">
-                    {% if user.is_authenticated %}
-                        {% for title in titles %}
-                            <li><a href="{% url 'main:playlist' playlist=title.id %}" class="playlist">{{ title.title }}</a></li>
-                        {% endfor %}
-                    {% endif %}
-                </ul>
-            </div>
+            <a href="{% url 'main:index' %}" class="text">{% trans 'Главная страница' %}</a>
+            <a href="{% url 'main:my_track' %}" class="text">{% trans 'Мои треки' %}</a>
+            <a href="{% url 'main:add_track' %}" class="text">{% trans 'Добавить трек' %}</a>
         </div>
+           
+        <div class="text2">
+            <a href="{% url 'main:favourite_song' %}" class="text2">{% trans 'Любимые треки' %}</a>
+            <a href="{% url 'main:create_playlist' %}" class="text2">{% trans 'Создать плейлист' %}</a>
+        </div>
+              
+        <ul class="playlist">
+            {% if user.is_authenticated %}
+                {% for title in titles %}
+                    <li><a href="{% url 'main:playlist' playlist=title.id %}" class="playlist">{{ title.title }}</a></li>
+                {% endfor %}
+            {% endif %}
+        </ul>
     </div>
     
     {% block content %}

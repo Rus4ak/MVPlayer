@@ -1,7 +1,8 @@
 {% extends 'main/base.html' %}
+{% load i18n %}
 
 {% block content %}
-<h1 class="pg-text">Жанры</h1>
+<h1 class="pg-text">{% trans 'Жанры' %}</h1>
 
 <div class="genres1">
     {% for genre in genres %}

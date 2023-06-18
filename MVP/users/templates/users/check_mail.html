@@ -1,12 +1,13 @@
 {% extends 'users/base.html' %}
+{% load i18n %}
 
 {% block content %}
     <div id="panel">
         <section>
-            <h2>Сброс пароля</h2>
+            <h2>{% trans 'Сброс пароля' %}</h2>
             <hr>
             <div class="password_reset_complete">
-                Инструкция по сбросу пароля отправлена на вашу электронную почту.
+                {% trans 'Инструкция по сбросу пароля отправлена на вашу электронную почту.' %}'
             </div>
         </section>
     </div>

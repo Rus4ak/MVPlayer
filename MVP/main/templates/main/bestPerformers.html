@@ -1,8 +1,9 @@
 {% extends 'main/base.html' %}
+{% load i18n %}
 
 {% block content %}
 
-<h1 class="pg-text">Лучшие исполнители</h1>
+<h1 class="pg-text">{% trans 'Лучшие исполнители' %}</h1>
 
 <div class="performers">
     {% for user in users %}

@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <h1 class="pg-text">{% block title %} {% endblock title %}</h1>
@@ -26,7 +27,7 @@
         </form>
         <div class="add_playlist">
             <div class="change_playlist">
-                <h2>Добавить в плейлист</h1>
+                <h2>{% trans 'Добавить в плейлист' %}</h1>
                 <hr color="#505050">
                 {% for title in titles %}
                     <form method="post" action="{% url 'main:add_song_playlist' song_id=s.id playlist_id=title.id %}">
@@ -65,7 +66,7 @@
         </form>
         <div class="add_playlist">
             <div class="change_playlist">
-                <h2>Добавить в плейлист</h1>
+                <h2>{% trans 'Добавить в плейлист' %}</h1>
                 <hr color="#505050">
                 {% for title in titles %}
                     <form method="post" action="{% url 'main:add_song_playlist' song_id=s.id playlist_id=title.id %}">

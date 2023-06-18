@@ -57,7 +57,7 @@ a {
     position: absolute;
     font-size: 20px;
     top: 70vh;
-    left: 31vh;
+    right: 2vh;
     color: rgb(220, 220, 220);
 }
 
@@ -403,4 +403,22 @@ section a:hover {
     border-radius: 10px;
     background-color: #757575;
     height: 18vh;
+}
+
+.change_language  {
+    position: absolute;
+    margin-top: 7vh;
+    margin-left: 1vh;
+}
+
+.change_language input {
+    position: absolute;
+    margin-top: -2vh;
+    margin-left: 17vh;
+}
+
+.change_language select {
+    position: absolute;
+    margin-top: -1.7vh;
+    margin-left: 0.7vh;
 }

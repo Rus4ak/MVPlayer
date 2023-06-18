@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-18 16:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\users\forms.py:11
+msgid "Логин"
+msgstr "Логін"
+
+#: .\users\forms.py:12
+msgid "Почта"
+msgstr "Пошта"
+
+#: .\users\forms.py:15
+msgid "Пароль"
+msgstr "Пароль"
+
+#: .\users\forms.py:19
+msgid "Повторить пароль"
+msgstr "Повторіть пароль"
+
+#: .\users\forms.py:41
+msgid "Иконка"
+msgstr "Іконка"
+
+#: .\users\forms.py:47
+msgid "Выберите файл"
+msgstr "Виберіть файл"
+
+#: .\users\templates\users\base.html:21
+msgid "Вход"
+msgstr "Вхід"
+
+#: .\users\templates\users\base.html:22
+#: .\users\templates\users\registration.html:8
+#: .\users\templates\users\registration.html:22
+msgid "Регистрация"
+msgstr "Реєстрація"
+
+#: .\users\templates\users\change_password.html:7
+#: .\users\templates\users\profile.html:53
+msgid "Изменить пароль"
+msgstr "Змінити пароль"
+
+#: .\users\templates\users\change_password.html:12
+msgid "Старый пароль"
+msgstr "Старий пароль"
+
+#: .\users\templates\users\change_password.html:15
+msgid "Новый пароль"
+msgstr "Новий пароль"
+
+#: .\users\templates\users\change_password.html:18
+msgid "Подтверждение пароля"
+msgstr "Підтвердження пароля"
+
+#: .\users\templates\users\change_password.html:25
+#: .\users\templates\users\profile.html:70
+msgid "Сохранить"
+msgstr "Зберегти"
+
+#: .\users\templates\users\check_mail.html:7
+#: .\users\templates\users\reset_password.html:7
+#: .\users\templates\users\reset_password_complete.html:7
+#: .\users\templates\users\reset_password_confirm.html:7
+msgid "Сброс пароля"
+msgstr "Скидання пароля"
+
+#: .\users\templates\users\check_mail.html:10
+msgid "Инструкция по сбросу пароля отправлена на вашу электронную почту."
+msgstr "Інструкцію зі скидання пароля відправлено на вашу електронну пошту."
+
+#: .\users\templates\users\login.html:8
+msgid "Вход на сайт"
+msgstr "Вхід на сайт"
+
+#: .\users\templates\users\login.html:18
+msgid "Неверный логин или пароль"
+msgstr "Невірний логін або пароль"
+
+#: .\users\templates\users\login.html:20
+msgid "Войти"
+msgstr "Увійти"
+
+#: .\users\templates\users\login.html:22
+msgid "Забыли пароль?"
+msgstr "Забули пароль?"
+
+#: .\users\templates\users\profile.html:14
+msgid "Профиль"
+msgstr "Профіль"
+
+#: .\users\templates\users\profile.html:32
+msgid "Настройки профиля"
+msgstr "Налаштування профілю"
+
+#: .\users\templates\users\profile.html:36
+msgid "Почта:"
+msgstr "Пошта:"
+
+#: .\users\templates\users\profile.html:47
+msgid "Неправильный адрес эл. почты"
+msgstr "Неправильна адреса ел. пошти"
+
+#: .\users\templates\users\profile.html:57
+msgid "Настройки сайта"
+msgstr "Налаштування сайту"
+
+#: .\users\templates\users\profile.html:73
+msgid "Выйти с аккаунта"
+msgstr "Вийти з облікового запису"
+
+#: .\users\templates\users\reset_password.html:16
+msgid "Отправить письмо"
+msgstr "Надіслати листа"
+
+#: .\users\templates\users\reset_password_complete.html:10
+msgid "Ваш пароль был успешно изменен"
+msgstr "Ваш пароль був успішно змінений"
+
+#: .\users\templates\users\reset_password_complete.html:10
+msgid "Войти здесь"
+msgstr "Увійти тут"
+
+#: .\users\templates\users\reset_password_confirm.html:16
+msgid "Отправить"
+msgstr "Відправити"
+
+#: .\users\templates\users\reset_password_email.html:6
+#, python-format
+msgid ""
+"\n"
+"\n"
+"    Для сброса пароля нажмите на ссылку ниже:\n"
+"\n"
+"    %(protocol)s://%(domain)s%(reset_password_url)s\n"
+"\n"
+"    Если ссылка выше не работает, скопируйте и вставьте URL-адрес в новый "
+"браузер вместо окна.\n"
+"\n"
+"    С уважением, Разработчик\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"    Для скидання пароля натисніть на посилання нижче:\n"
+"\n"
+"    %(protocol)s://%(domain)s%(reset_password_url)s\n"
+"\n"
+"    Якщо посилання вище не працює, скопіюйте та вставте URL-адресу в новий "
+"браузер замість вікна.\n"
+"\n"
+"    З повагою, Розробник\n"
+"\n"
+
+#: .\users\views.py:57
+msgid "Мы отправили вам по электронной почте инструкцию по установке пароля"
+msgstr ""
+"Ми відправили вам інструкцію по установці пароля на вашу електронну пошту"
+
+#~ msgid "Change"
+#~ msgstr "Змінити"

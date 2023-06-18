@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/users/index.css' %}">
-    <title>{% block title %}MVPlayer{% endblock title %}</title>
+    <title>{% block title %} MVPlayer {% endblock title %}</title>
 </head>
 <body> 
     <img src="{% static 'img/banner.png' %}" alt="banner", id="banner">
@@ -16,8 +18,8 @@
 
     {% if not user.is_authenticated %}
         <h3 id="autorization">
-            <a href="{% url 'users:login' %}" class="a-login">Вход</a> /
-            <a href="{% url 'users:registration' %}" class="a-login">Регистрация</a>
+            <a href="{% url 'users:login' %}" class="a-login">{% trans 'Вход' %}</a> /
+            <a href="{% url 'users:registration' %}" class="a-login">{% trans 'Регистрация' %}</a>
         </h3>
     {% endif %}
     

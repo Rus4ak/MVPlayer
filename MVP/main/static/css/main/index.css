@@ -76,14 +76,21 @@ a {
     margin-top: 5px;
 }
 
+.text a {
+    display: block;
+    margin-bottom: 0px;
+}
+
 .text:hover {
     color: white;
 }
 
 .text2 {
+    font-family: cursive;
+    font-weight: 600;
     color: rgb(185, 185, 185);
-    font-size: 35px;
-    margin: 10px;
+    font-size: 33px;
+    margin: 20px;
     margin-top: 50px;
 }
 
@@ -93,9 +100,11 @@ a {
 
 .playlist {
     color: rgb(185, 185, 185);
+    font-family: cursive;
+    font-weight: 600;
     font-size: 20px;
     margin-top: 10px;
-    margin: 15px;
+    margin-left: 50px;
 }
 
 .playlist li a {
@@ -235,6 +244,9 @@ a {
     height: 14.5vh;
     width: 50vh;
     top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #hits-of-week:hover {
@@ -248,14 +260,11 @@ a {
 
 #hits-of-week-text {
     color: rgb(185, 185, 185);
-    position: relative;   
     font-size: 40px;
     font-family: sans-serif;
     font-weight: 600;
     margin: 30px;
-    top: -3vh;
 }
-
 
 #mix {
     background: linear-gradient(to top left, #272727 60%, #353535);
@@ -296,6 +305,9 @@ a {
     height: 14.5vh;
     width: 50vh;
     top: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #best-performers:hover {
@@ -314,7 +326,6 @@ a {
     font-family: sans-serif;
     font-weight: 600;
     margin: 30px;
-    top: -3vh;
 }
 
 #genres {
@@ -617,7 +628,7 @@ audio {
 .add_track {
     position: absolute;
     margin-top: 8vh;
-    margin-left: 60vh;
+    margin-left: 63vh;
 }
 
 .add_track div {
@@ -644,7 +655,7 @@ audio {
 .add_track div label {
     position: absolute;
     margin-top: -24vh;
-    margin-left: -5vh;
+    margin-left: -8vh;
     font-size: 30px;
     color: #fff;
 }
@@ -666,7 +677,7 @@ audio {
     padding: 6px 28px;
     outline: none;
     margin-top: -7vh;
-    margin-left: -2.5vh;
+    margin-left: -5.5vh;
     position: absolute;
 }
 

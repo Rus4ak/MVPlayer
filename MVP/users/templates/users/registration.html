@@ -1,10 +1,11 @@
 {% extends 'users/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
     <div id="panel">
         <section style="top: 40%;" id="register">
-            <h2>Регистрация</h2>
+            <h2>{% trans 'Регистрация' %}</h2>
             <form method="post">
                 {% csrf_token %}
           
@@ -18,7 +19,7 @@
                 {% endif %}
                 {% endfor %}
 
-                <button type="submit">Регистрация</button>
+                <button type="submit">{% trans 'Регистрация' %}</button>
             </form>
         </section>
     </div>

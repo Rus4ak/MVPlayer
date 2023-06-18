@@ -2,13 +2,15 @@ from django.http import HttpResponseRedirect
 from django.views.decorators.cache import never_cache
 from django.views.generic.base import View
 from django.views.generic.edit import FormView
+from django.views.i18n import set_language
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import render
+from django.utils.translation import gettext as _
+from django.shortcuts import render, redirect
 
 from .forms import RegisterForm, ProfileForm
 from main.models import Profile
@@ -52,7 +54,7 @@ class ResetPasswordViews(SuccessMessageMixin, PasswordResetView):
     template_name = 'users/reset_password.html'
     email_template_name = 'users/reset_password_email.html'
     subject_template_name = 'users/reset_password_subject'
-    success_message = "Мы отправили вам по электронной почте инструкцию по установке пароля"
+    success_message = _("Мы отправили вам по электронной почте инструкцию по установке пароля")
     success_url = '/user/check_mail/'
 
 
@@ -92,6 +94,12 @@ def profile(request):
                 user_obj.save()
             else:
                 error_email = True
+
+        if request.POST.get('language'):
+            request.session['language'] = request.POST['language']
+
+            return set_language(request)
+            # return redirect(request.META.get('HTTP_REFERER'))
 
     else:
         profile_form = ProfileForm(instance=request.user.profile)

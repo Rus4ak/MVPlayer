@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+{% load i18n %}
 
 {% block content %}
 
@@ -10,7 +11,7 @@
             <label>{{field.label}} - </label>
         </div>
     {% endfor %}
-    <button type="submit">Загрузить</button>
+    <button type="submit">{% trans 'Загрузить' %}</button>
 </form>
 
 {% endblock content %}

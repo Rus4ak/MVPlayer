@@ -1,11 +1,12 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <form action="{% url 'main:search' %}" method="post">
     {% csrf_token %}
     <div class="search">
-      <input type="text" class="search-txt" name="search_query" placeholder="Искать здесь...">
+      <input type="text" class="search-txt" name="search_query" placeholder="{% trans 'Искать здесь...' %}">
       <button type="submit"><img src="{% static 'img/search.png' %}" alt="search-icon" class="search-icon"></button>
     </div>
 </form>
@@ -32,7 +33,7 @@
     </form>
     <div class="add_playlist">
         <div class="change_playlist">
-            <h2>Добавить в плейлист</h1>
+            <h2>{% trans 'Добавить в плейлист' %}</h1>
             <hr color="#505050">
             {% for title in titles %}
                 <form method="post" action="{% url 'main:add_song_playlist' song_id=s.id playlist_id=title.id %}">

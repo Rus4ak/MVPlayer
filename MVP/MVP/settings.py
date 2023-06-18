@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 CACHES = {
@@ -82,6 +83,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'main.views.custom_proc',
+                'users.context_processors.language',
             ],
         },
     },
@@ -125,13 +127,23 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'Ru-ru'
+LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = [
+    ('en-us', 'English'),
+    ('ru-ru', 'Russian'),
+    ('uk-ua', 'Ukrainian'),
+]
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, '../locale'),
+)
 
 
 # Static files (CSS, JavaScript, Images)

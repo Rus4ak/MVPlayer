@@ -1,5 +1,6 @@
 {% extends 'users/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
@@ -10,7 +11,7 @@
             <img src="{{ user_icon.url }}?{{ random_string }}" alt="user_icon" class="icon_user">
         </div>
         <div class="username">
-            <h3>Профиль</h3>    
+            <h3>{% trans 'Профиль' %}</h3>    
             <h1 class="title_name">{{ user_obj.username }}</h1>
 
             <div class="edit_username" onclick="editUsername()">
@@ -28,11 +29,11 @@
             {% endif %}
         {% endfor %}
         
-        <h1 class="settings_profile">Настройки профиля</h1>
+        <h1 class="settings_profile">{% trans 'Настройки профиля' %}</h1>
 
         <div class="settings_email">
             <div class="email">
-                <h1>Почта: </h1>
+                <h1>{% trans 'Почта:' %}</h1>
                 <h1 class="user_obj_email">{{ user_obj.email }}</h1>
             </div>
 
@@ -43,19 +44,33 @@
             <input type="text" name="new_email" class="new_email" style="display: none;">
             {% if error_email %}
                 <ul class="error_email">
-                    <li>Неправильный адрес эл. почты</li>
+                    <li>{% trans 'Неправильный адрес эл. почты' %}</li>
                 </ul>
             {% endif %}
         </div>
 
         <div class="settings_password">
-            <a href="{% url 'users:change_password' user_id=user_obj.id %}">Изменить пароль</a>
+            <a href="{% url 'users:change_password' user_id=user_obj.id %}">{% trans 'Изменить пароль' %}</a>
         </div>
 
-        <button type="submit" class="save_change">Сохранить</button>
+        <div class="change_language">
+            <h1>{% trans 'Настройки сайта' %}</h1>
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == current_language %} selected="selected"{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="save_change">{% trans 'Сохранить' %}</button>
     </form>
 
-    <a href="{% url 'users:logout' %}" class="a-logout">Выйти с аккаунта</a>
+    <a href="{% url 'users:logout' %}" class="a-logout">{% trans 'Выйти с аккаунта' %}</a>
 </div>
 
 <script>
