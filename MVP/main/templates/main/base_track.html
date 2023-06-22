@@ -117,12 +117,13 @@ $('.like button').click(function(event) {
 });
 
 var selector = 'audio';
-var audios = $(selector), len = audios.length, i = 0;
+var audios = $(selector), len = audios.length
 
 audios.bind('ended', function(e){
-    i++;
-    if(i === len) i=0;
-    audios[i].play();
+    var currentAudio = $(this);
+    var currentIndex = audios.index(currentAudio);
+
+    audios[currentIndex + 1].play();
 });
 
 audios.on('volumechange', function() {
