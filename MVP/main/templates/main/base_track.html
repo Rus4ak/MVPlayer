@@ -11,7 +11,7 @@
         <div class="username"><a href="{% url 'main:user' user_id=s.user.id %}" class="song_user">{{ s.user }}</a></div>
         <img src="{{ s.icon.url }}" alt="icon" class="song_icon">
         <div class="song-panel">
-            <audio controls preload="auto">
+            <audio controls preload="metadata">
                 <source src="{{ MEDIA_ROOT }}/{{ s.audio_file }}" type="audio/mpeg">
             </audio>
         </div>
@@ -50,7 +50,7 @@
         <div class="username"><a href="{% url 'main:user' user_id=s.user.id %}" class="song_user">{{ s.user }}</a></div>
         <img src="{{s.icon.url}}" alt="icon" class="song_icon">
         <div class="song-panel">
-            <audio controls preload="auto">
+            <audio controls preload="metadata">
                 <source src="{{ MEDIA_ROOT }}/{{ s.audio_file }}" type="audio/mpeg">
             </audio>
         </div>
@@ -112,6 +112,35 @@ $('.like button').click(function(event) {
         error: function(xhr, errmsg, err) {
             // Обработка ошибки при выполнении запроса
             console.log(xhr.status + ': ' + xhr.responseText);
+        }
+    });
+});
+
+var selector = 'audio';
+var audios = $(selector), len = audios.length, i = 0;
+
+audios.bind('ended', function(e){
+    i++;
+    if(i === len) i=0;
+    audios[i].play();
+});
+
+audios.on('volumechange', function() {
+    var currectVolume = $(this).prop('volume');
+
+    audios.each(function() {
+        if (this !== event.target) {
+            $(this).prop('volume', currectVolume);
+        }
+    });
+});
+
+audios.on('play', function() {
+    var currentAudio = $(this);
+
+    audios.each(function() {
+        if (this !== currentAudio[0]) {
+            this.pause();
         }
     });
 });
