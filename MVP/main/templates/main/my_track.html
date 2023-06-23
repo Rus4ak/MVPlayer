@@ -11,7 +11,7 @@
         <img src="{{s.icon.url}}" alt="icon" class="song_icon">
 
         <div class="song-panel">
-            <audio controls>
+            <audio controls preload="metadata">
                 <source src="{{ MEDIA_ROOT }}/{{ s.audio_file }}" type="audio/mpeg">
             </audio>
         </div>

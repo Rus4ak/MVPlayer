@@ -17,7 +17,7 @@
       <div class="username"><a href="{% url 'main:user' user_id=s.user.id %}">{{ s.user }}</a></div>
       <img src="{{s.icon.url}}" alt="icon" class="img_search">
       <div class="song-panel">
-          <audio controls preload="auto">
+          <audio controls preload="metadata">
               <source src="{{ MEDIA_ROOT }}/{{ s.audio_file }}" type="audio/mpeg">
           </audio>
       </div>
