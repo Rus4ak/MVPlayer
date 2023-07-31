@@ -10,14 +10,13 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.translation import gettext as _
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from .forms import RegisterForm, ProfileForm
 from main.models import Profile
 
 import re
 
-# Create your views here.
 
 class Register(FormView):
     form_class = RegisterForm
@@ -68,6 +67,8 @@ class ResetPasswordConfirmView(PasswordResetConfirmView):
 
 @never_cache
 def profile(request):
+    ''' Show and edit the user's profile information. '''
+
     user_obj = User.objects.get(id=request.user.id)
     user_icon = Profile.objects.filter(user=request.user).first().icon
     error_email = False
@@ -99,7 +100,6 @@ def profile(request):
             request.session['language'] = request.POST['language']
 
             return set_language(request)
-            # return redirect(request.META.get('HTTP_REFERER'))
 
     else:
         profile_form = ProfileForm(instance=request.user.profile)

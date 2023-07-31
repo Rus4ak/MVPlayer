@@ -35,12 +35,14 @@ def delete_cache_edit_playlist(sender, instance, **kwargs):
     cache.clear()
 
 
+# Create a user profile when a new User object is saved
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
 
 
+# Save a user profile when a User object is updated
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
