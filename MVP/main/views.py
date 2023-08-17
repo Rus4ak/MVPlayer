@@ -89,7 +89,7 @@ def add_track(request):
 
                 audio_file = form.cleaned_data['audio_file']
                 compressed_audio_file = handle_uploaded_file(audio_file) # compress audio file
-                song.audio_file = compressed_audio_file
+                song.audio_file = compressed_audio_file[6:]
 
                 song.save()
                 form.save_m2m()
